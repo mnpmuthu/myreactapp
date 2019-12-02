@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import { Register } from "./Components/Register";
-import "bootstrap";
+import Register from "./Components/Register";
+import "../node_modules/bootstrap";
 
 class App extends Component {
   render() {
     return (
-      <div>
+      <div className="container">
         <Register />
       </div>
     );

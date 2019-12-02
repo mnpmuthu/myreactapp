@@ -9,13 +9,17 @@ class Register extends Component {
       confirmEmail: "",
       password: ""
     };
+
+    this.registerUser = this.registerUser.bind(this);
+    this.changeValue = this.changeValue.bind(this);
   }
 
-  registerUser() {
-    alert("User {this.state.name} is registerd...");
+  registerUser(event) {
+    console.log("User ", this.state, " is registerd...");
+    event.preventDefault();
   }
 
-  changeInputValue(event) {
+  changeValue(event) {
     this.setState({
       [event.target.name]: event.target.value
     });
@@ -23,17 +27,72 @@ class Register extends Component {
 
   render() {
     return (
-      <form onSubmit={() => this.registerUser()}>
-        <div>
+      <form onSubmit={this.registerUser}>
+        <div className="d-flex justify-content-center">
+          <h2>Sign Up</h2>
+        </div>
+
+        <div className="input-group">
+          <span className="input-group-addon">
+            <i className="fa fa-user" />
+          </span>
           <input
-            type="test"
+            className="form-control"
+            placeholder="Your name"
+            type="text"
             name="name"
-            onChange={() => this.changeInputValue(this.event)}
+            onChange={this.changeValue}
+            required
           />
         </div>
-        <button type="submit" className="btn btn-primary">
-          Register
-        </button>
+
+        <div className="input-group">
+          <span className="input-group-addon">
+            <i className="fa fa-envelope" />
+          </span>
+          <input
+            className="form-control"
+            placeholder="Your email"
+            type="email"
+            name="email"
+            onChange={this.changeValue}
+            required
+          />
+        </div>
+
+        <div className="input-group">
+          <span className="input-group-addon">
+            <i className="fa fa-envelope" />
+          </span>
+          <input
+            className="form-control"
+            placeholder="Confirm your email"
+            type="email"
+            name="confirmEmail"
+            onChange={this.changeValue}
+            required
+          />
+        </div>
+
+        <div className="input-group">
+          <span className="input-group-addon">
+            <i className="fa fa-lock" />
+          </span>
+          <input
+            type="password"
+            className="form-control"
+            name="password"
+            placeholder="Password"
+            onChange={this.changeValue}
+            required
+          />
+        </div>
+
+        <div className="d-flex justify-content-center">
+          <button type="submit" className="btn btn-primary">
+            Register
+          </button>
+        </div>
       </form>
     );
   }

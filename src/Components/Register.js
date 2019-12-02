@@ -89,7 +89,7 @@ class Register extends Component {
         </div>
 
         <div className="d-flex justify-content-center">
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="btn btn-primary text-uppercase">
             Register
           </button>
         </div>

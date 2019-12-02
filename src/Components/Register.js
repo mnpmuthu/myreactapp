@@ -14,12 +14,22 @@ class Register extends Component {
     this.changeValue = this.changeValue.bind(this);
   }
 
+  resetForm = () => {
+    this.setState({
+      name: "",
+      email: "",
+      confirmEmail: "",
+      password: ""
+    });
+  };
+
   registerUser(event) {
     if (this.state.email !== this.state.confirmEmail)
       alert("Email is not been same");
-    else alert("User is registerd.");
-
-    console.log("User is registerd.");
+    else {
+      alert("User is registerd.");
+      this.resetForm();
+    }
     event.preventDefault();
   }
 
@@ -45,6 +55,7 @@ class Register extends Component {
             placeholder="Your name"
             type="text"
             name="name"
+            value={this.state.name}
             onChange={this.changeValue}
             required
           />
@@ -59,6 +70,7 @@ class Register extends Component {
             placeholder="Your email"
             type="email"
             name="email"
+            value={this.state.email}
             onChange={this.changeValue}
             required
           />
@@ -73,6 +85,7 @@ class Register extends Component {
             placeholder="Confirm your email"
             type="email"
             name="confirmEmail"
+            value={this.state.confirmEmail}
             onChange={this.changeValue}
             required
           />
@@ -86,6 +99,7 @@ class Register extends Component {
             type="password"
             className="form-control"
             name="password"
+            value={this.state.password}
             placeholder="Password"
             onChange={this.changeValue}
             required

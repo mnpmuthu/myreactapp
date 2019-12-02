@@ -15,7 +15,7 @@ class Register extends Component {
   }
 
   registerUser(event) {
-    console.log("User ", this.state, " is registerd...");
+    console.log("User ", this.state.name, " is registerd...");
     event.preventDefault();
   }
 
@@ -62,7 +62,7 @@ class Register extends Component {
 
         <div className="input-group">
           <span className="input-group-addon">
-            <i className="fa fa-envelope" />
+            <i className="fa fa-warning" />
           </span>
           <input
             className="form-control"

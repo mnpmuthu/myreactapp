@@ -5,8 +5,8 @@
 
 .input-group-addon {
   width: 25px;
-  display: flex;
-  padding: 10px 5px;
+  padding: 10px 1px;
+  font-size: 20px;
 }
 .form-control {
   border: none;

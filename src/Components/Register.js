@@ -15,7 +15,11 @@ class Register extends Component {
   }
 
   registerUser(event) {
-    console.log("User ", this.state.name, " is registerd...");
+    if (this.state.email !== this.state.confirmEmail)
+      alert("Email is not been same");
+    else alert("User is registerd.");
+
+    console.log("User is registerd.");
     event.preventDefault();
   }
 

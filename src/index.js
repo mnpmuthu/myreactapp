@@ -7,12 +7,12 @@ import "../node_modules/bootstrap";
 import App from "./App.js";
 import "./styles.css";
 
-const routing = ( 
-  <div className="container-fluid"> 
-  <BrowserRouter>   
-      <App/>
-  </BrowserRouter> 
+const routing = (
+  <div className="container-fluid">
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </div>
-)  
+);
 
 ReactDOM.render(routing, document.getElementById("root"));

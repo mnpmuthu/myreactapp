@@ -8,7 +8,7 @@ import Home from "./Components/Home"
 class App extends Component {
   render() {
     return (
-      <div>
+      <div>        
         <Route path="/" component={Menu} />  
         <Route path="/home" component={Home}/> 
         <Route path="/about" component={About} />  

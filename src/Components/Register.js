@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import {withRouter} from 'react-router-dom';
 class Register extends Component {
   constructor(props) {
     super(props);
@@ -29,8 +29,9 @@ class Register extends Component {
     else {
       alert("User is registerd.");
       this.resetForm();
-    }
-    event.preventDefault();
+    }  
+    this.props.history.push('/home');
+//    event.preventDefault();
   }
 
   changeValue(event) {
@@ -115,4 +116,4 @@ class Register extends Component {
     );
   }
 }
-export default Register;
+export default withRouter(Register);

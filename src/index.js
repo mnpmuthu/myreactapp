@@ -1,6 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
+
+import { BrowserRouter, Route, Link } from "react-router-dom";
+import "../node_modules/bootstrap";
+
 import App from "./App.js";
 import "./styles.css";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+const routing = ( 
+  <div className="container"> 
+  <BrowserRouter>   
+      <App/>
+  </BrowserRouter> 
+  </div>
+)  
+
+ReactDOM.render(routing, document.getElementById("root"));

@@ -8,7 +8,7 @@ import App from "./App.js";
 import "./styles.css";
 
 const routing = ( 
-  <div className="container"> 
+  <div className="container-fluid"> 
   <BrowserRouter>   
       <App/>
   </BrowserRouter> 

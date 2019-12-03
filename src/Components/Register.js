@@ -30,7 +30,7 @@ class Register extends Component {
       alert("User is registerd.");
       this.resetForm();
     }  
-    this.props.history.push('/home');
+    this.props.history.push("/signup/User '"+this.state.name +"' is registerd.");
 //    event.preventDefault();
   }
 

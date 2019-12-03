@@ -1,8 +1,17 @@
 import React,{Component} from 'react'
 
 class Home extends Component{
+  constructor(props){
+    super(props)
+    console.log(props);
+  }
+
   render(){
-    return <h1>Home</h1>
+    return (
+      <div>
+        <h1>Home - {this.props.match.params.message}</h1>
+      </div>
+    )
   }
 }
 

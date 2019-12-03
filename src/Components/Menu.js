@@ -3,19 +3,18 @@ import { Link } from "react-router-dom";
 class Menu extends Component{
   render(){
     return(
-      <div className="d-flex justify-content-left textalign-left">
-        
-        <ul>  
-          <li>  
-            <Link to="/">Home</Link>  
+      <div className="row navbar navbar-expand-sm bg-light">        
+        <ul className='navbar-nav'>  
+          <li className='nav-item col-lg-3'>  
+            <Link to="/home">Home</Link>  
           </li>  
-          <li>  
+          <li className='nav-item col-lg-3'>  
             <Link to="/about">About</Link>  
           </li>  
-          <li>  
+          <li className='nav-item col-lg-3'>  
             <Link to="/contact">Contact</Link>  
           </li>  
-          <li>  
+          <li className='nav-item col-lg-3'>  
             <Link to="/register">Register</Link>  
           </li>  
         </ul>        

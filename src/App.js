@@ -1,10 +1,12 @@
 import React, { Component } from "react";
-import { Route } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 import Menu from "./Components/Menu";
 import About from "./Components/About";
 import Contact from "./Components/Contact";
 import Register from "./Components/Register";
 import Home from "./Components/Home";
+import NotFound from "./Components/NotFound";
+
 class App extends Component {
   render() {
     return (
@@ -15,6 +17,8 @@ class App extends Component {
         <Route path="/about" component={About} />
         <Route path="/contact" component={Contact} />
         <Route path="/register" component={Register} />
+        <Route path="/404" component={NotFound} />
+        <Redirect to="/home" />
       </div>
     );
   }

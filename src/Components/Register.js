@@ -1,5 +1,8 @@
 import React, { Component } from "react";
-import {withRouter} from 'react-router-dom';
+import { withRouter } from "react-router-dom";
+
+import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from "mdbreact";
+
 class Register extends Component {
   constructor(props) {
     super(props);
@@ -29,9 +32,11 @@ class Register extends Component {
     else {
       alert("User is registerd.");
       this.resetForm();
-    }  
-    this.props.history.push("/signup/User '"+this.state.name +"' is registerd.");
-//    event.preventDefault();
+    }
+    this.props.history.push(
+      "/signup/User '" + this.state.name + "' is registerd."
+    );
+    //    event.preventDefault();
   }
 
   changeValue(event) {
@@ -42,77 +47,74 @@ class Register extends Component {
 
   render() {
     return (
-      <form onSubmit={this.registerUser}>
-        <div className="d-flex justify-content-center">
-          <h2>Sign Up</h2>
-        </div>
-
-        <div className="input-group">
-          <span className="input-group-addon">
-            <i className="fa fa-user" />
-          </span>
-          <input
-            className="form-control"
-            placeholder="Your name"
-            type="text"
-            name="name"
-            value={this.state.name}
-            onChange={this.changeValue}
-            required
-          />
-        </div>
-
-        <div className="input-group">
-          <span className="input-group-addon">
-            <i className="fa fa-envelope" />
-          </span>
-          <input
-            className="form-control"
-            placeholder="Your email"
-            type="email"
-            name="email"
-            value={this.state.email}
-            onChange={this.changeValue}
-            required
-          />
-        </div>
-
-        <div className="input-group">
-          <span className="input-group-addon">
-            <i className="fa fa-warning" />
-          </span>
-          <input
-            className="form-control"
-            placeholder="Confirm your email"
-            type="email"
-            name="confirmEmail"
-            value={this.state.confirmEmail}
-            onChange={this.changeValue}
-            required
-          />
-        </div>
-
-        <div className="input-group">
-          <span className="input-group-addon">
-            <i className="fa fa-lock" />
-          </span>
-          <input
-            type="password"
-            className="form-control"
-            name="password"
-            value={this.state.password}
-            placeholder="Password"
-            onChange={this.changeValue}
-            required
-          />
-        </div>
-
-        <div className="d-flex justify-content-center">
-          <button type="submit" className="btn btn-primary text-uppercase">
-            Register
-          </button>
-        </div>
-      </form>
+      <div>
+        <MDBContainer onSubmit={this.registerUser}>
+          <MDBRow>
+            <MDBCol md="6">
+              <form>
+                <p className="h5 text-center mb-4">Sign up</p>
+                <div className="grey-text">
+                  <MDBInput
+                    name="name"
+                    value={this.state.name}
+                    onChange={this.changeValue}
+                    required
+                    label="Your name"
+                    icon="user"
+                    group
+                    type="text"
+                    validate
+                    error="wrong"
+                    success="right"
+                  />
+                  <MDBInput
+                    name="email"
+                    value={this.state.email}
+                    onChange={this.changeValue}
+                    required
+                    label="Your email"
+                    icon="envelope"
+                    group
+                    type="email"
+                    validate
+                    error="wrong"
+                    success="right"
+                  />
+                  <MDBInput
+                    name="confirmEmail"
+                    value={this.state.confirmEmail}
+                    onChange={this.changeValue}
+                    required
+                    label="Confirm your email"
+                    icon="exclamation-triangle"
+                    group
+                    type="text"
+                    validate
+                    error="wrong"
+                    success="right"
+                  />
+                  <MDBInput
+                    name="password"
+                    value={this.state.password}
+                    onChange={this.changeValue}
+                    required
+                    label="Your password"
+                    icon="lock"
+                    group
+                    type="password"
+                    validate
+                  />
+                </div>
+                <div className="text-center">
+                  <MDBBtn type="submit" color="primary">
+                    Register
+                  </MDBBtn>
+                </div>
+              </form>
+            </MDBCol>
+          </MDBRow>
+        </MDBContainer>
+      </div>
     );
   }
 }

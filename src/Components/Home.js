@@ -1,18 +1,23 @@
-import React,{Component} from 'react'
+import React, { Component } from "react";
+import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from "mdbreact";
 
-class Home extends Component{
-  constructor(props){
-    super(props)
+class Home extends Component {
+  constructor(props) {
+    super(props);
     console.log(props);
   }
 
-  render(){
+  render() {
     return (
       <div>
-        <h1>Home - {this.props.match.params.message}</h1>
+        {this.props.match.params.message ? (
+          <h1>Sign up - {this.props.match.params.message}</h1>
+        ) : (
+          <h1>Home </h1>
+        )}
       </div>
-    )
+    );
   }
 }
 
-export default Home
+export default Home;

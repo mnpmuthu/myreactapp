@@ -1,7 +1,14 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 
-import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from "mdbreact";
+import {
+  MDBContainer,
+  MDBRow,
+  MDBCol,
+  MDBInput,
+  MDBBtn,
+  MDBSelect
+} from "mdbreact";
 
 class Register extends Component {
   constructor(props) {
@@ -129,6 +136,12 @@ class Register extends Component {
                   <div className="invalid-feedback">
                     Please provide a valid city.
                   </div>
+
+                  <MDBSelect
+                    options={this.state.options}
+                    selected="Choose your option"
+                    label="Example label"
+                  />
                 </div>
 
                 <div className="text-center">

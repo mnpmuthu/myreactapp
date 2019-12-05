@@ -1,7 +1,14 @@
 import React, { Component } from "react";
-import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from "mdbreact";
+//import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from "mdbreact";
+import userlist from "../Datas/userlist.json";
+import { User } from "../Components/User";
 
 class Home extends Component {
+  constructor(props) {
+    super(props);
+    console.log(userlist);
+  }
+
   render() {
     return (
       <div>
@@ -10,6 +17,14 @@ class Home extends Component {
         ) : (
           <h1>Home </h1>
         )}
+
+        <ul>
+          {userlist.users.map(item => (
+            <li key={item.id} label={item.name} value={item.name}>
+              {item.name}
+            </li>
+          ))}
+        </ul>
       </div>
     );
   }

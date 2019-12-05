@@ -1,0 +1,40 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "CTS",
+      "lastName": "BILL",
+      "email": "bill@cts.com",
+      "password": "cognizant",
+      "subject": "hi",
+      "message": "hi"
+    },
+    {
+      "id": 2,
+      "name": "Mark",
+      "lastName": "Zuckerberg",
+      "email": "mark@facebook.com",
+      "password": "cognizant1",
+      "subject": "hi",
+      "message": "hi"
+    },
+    {
+      "id": 3,
+      "name": "Jeff",
+      "lastName": "Bezos",
+      "email": "jeff@amazon.com",
+      "password": "cognizant123",
+      "subject": "hi",
+      "message": "hi"
+    },
+    {
+      "id": 4,
+      "name": "AAAAAA",
+      "lastName": "Bezos",
+      "email": "aaaa@amazon.com",
+      "password": "cognizant123",
+      "subject": "hi",
+      "message": "hi"
+    }
+  ]
+}

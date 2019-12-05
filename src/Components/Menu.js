@@ -20,6 +20,9 @@ class Menu extends Component {
           <li className="nav-item col-lg-4">
             <Link to="/formsPage">Form Page</Link>
           </li>
+          <li className="nav-item col-lg-4">
+            <Link to="/selectPage">Select Page</Link>
+          </li>
         </ul>
       </div>
     );

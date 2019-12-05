@@ -7,6 +7,7 @@ import Register from "./Components/Register";
 import Home from "./Components/Home";
 import NotFound from "./Components/NotFound";
 import FormsPage from "./Components/FormsPage";
+import SelectPage from "./Components/SelectPage";
 
 class App extends Component {
   render() {
@@ -20,6 +21,7 @@ class App extends Component {
         <Route path="/register" component={Register} />
         <Route path="/404" component={NotFound} />
         <Route path="/formsPage" component={FormsPage} />
+        <Route path="/selectPage" component={SelectPage} />
         <Redirect to="/home" />
       </div>
     );

@@ -27,16 +27,22 @@ class Register extends Component {
   };
 
   registerUser(event) {
-    if (this.state.email !== this.state.confirmEmail)
+    //console.log(event);
+    event.target.classList.add("was-validated");
+    if (event.target.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+      event.preventDefault();
+    } else if (this.state.email !== this.state.confirmEmail) {
       alert("Email is not been same");
-    else {
+      event.preventDefault();
+    } else {
       alert("User is registerd.");
       this.resetForm();
+      this.props.history.push(
+        "/signup/User '" + this.state.name + "' is registerd."
+      );
     }
-    this.props.history.push(
-      "/signup/User '" + this.state.name + "' is registerd."
-    );
-    //    event.preventDefault();
   }
 
   changeValue(event) {
@@ -48,10 +54,14 @@ class Register extends Component {
   render() {
     return (
       <div>
-        <MDBContainer onSubmit={this.registerUser}>
-          <MDBRow>
-            <MDBCol md="6">
-              <form>
+        <form
+          noValidate
+          onSubmit={this.registerUser}
+          className="needs-validation"
+        >
+          <MDBContainer>
+            <MDBRow>
+              <MDBCol md="6">
                 <p className="h5 text-center mb-4">Sign up</p>
                 <div className="grey-text">
                   <MDBInput
@@ -67,6 +77,10 @@ class Register extends Component {
                     error="wrong"
                     success="right"
                   />
+                  <div className="invalid-feedback">
+                    Please provide a valid city.
+                  </div>
+
                   <MDBInput
                     name="email"
                     value={this.state.email}
@@ -80,6 +94,10 @@ class Register extends Component {
                     error="wrong"
                     success="right"
                   />
+                  <div className="invalid-feedback">
+                    Please provide a valid city.
+                  </div>
+
                   <MDBInput
                     name="confirmEmail"
                     value={this.state.confirmEmail}
@@ -93,6 +111,10 @@ class Register extends Component {
                     error="wrong"
                     success="right"
                   />
+                  <div className="invalid-feedback">
+                    Please provide a valid city.
+                  </div>
+
                   <MDBInput
                     name="password"
                     value={this.state.password}
@@ -104,16 +126,23 @@ class Register extends Component {
                     type="password"
                     validate
                   />
+                  <div className="invalid-feedback">
+                    Please provide a valid city.
+                  </div>
                 </div>
+
                 <div className="text-center">
                   <MDBBtn type="submit" color="primary">
                     Register
                   </MDBBtn>
+                  <MDBBtn type="reset" color="danger" onClick={this.resetForm}>
+                    Reset
+                  </MDBBtn>
                 </div>
-              </form>
-            </MDBCol>
-          </MDBRow>
-        </MDBContainer>
+              </MDBCol>
+            </MDBRow>
+          </MDBContainer>
+        </form>
       </div>
     );
   }

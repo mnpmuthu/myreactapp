@@ -6,6 +6,7 @@ import Contact from "./Components/Contact";
 import Register from "./Components/Register";
 import Home from "./Components/Home";
 import NotFound from "./Components/NotFound";
+import FormsPage from "./Components/FormsPage";
 
 class App extends Component {
   render() {
@@ -18,6 +19,7 @@ class App extends Component {
         <Route path="/contact" component={Contact} />
         <Route path="/register" component={Register} />
         <Route path="/404" component={NotFound} />
+        <Route path="/formsPage" component={FormsPage} />
         <Redirect to="/home" />
       </div>
     );

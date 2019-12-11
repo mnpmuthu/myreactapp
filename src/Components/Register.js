@@ -10,6 +10,8 @@ import {
   MDBSelect
 } from "mdbreact";
 
+import UserService from "../Service/UserService";
+
 class Register extends Component {
   constructor(props) {
     super(props);
@@ -19,7 +21,7 @@ class Register extends Component {
       confirmEmail: "",
       password: ""
     };
-
+    this.userService = new UserService();
     this.registerUser = this.registerUser.bind(this);
     this.changeValue = this.changeValue.bind(this);
   }
@@ -35,6 +37,7 @@ class Register extends Component {
 
   registerUser(event) {
     //console.log(event);
+    event.preventDefault();
     event.target.classList.add("was-validated");
     if (event.target.checkValidity() === false) {
       event.preventDefault();
@@ -45,6 +48,7 @@ class Register extends Component {
       event.preventDefault();
     } else {
       alert("User is registerd.");
+      this.userService.onAddUser(this.state);
       this.resetForm();
       this.props.history.push(
         "/signup/User '" + this.state.name + "' is registerd."
@@ -136,12 +140,6 @@ class Register extends Component {
                   <div className="invalid-feedback">
                     Please provide a valid city.
                   </div>
-
-                  <MDBSelect
-                    options={this.state.options}
-                    selected="Choose your option"
-                    label="Example label"
-                  />
                 </div>
 
                 <div className="text-center">

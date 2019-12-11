@@ -1,12 +1,17 @@
 import React, { Component } from "react";
 //import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from "mdbreact";
-import userlist from "../Datas/userlist.json";
-import { User } from "../Components/User";
+//import userlist from "../Datas/userlist.json";
+import UserService from "../Service/UserService";
 
 class Home extends Component {
+  userlist = [];
   constructor(props) {
     super(props);
-    console.log(userlist);
+    this.userService = new UserService();
+  }
+
+  componentDidMount() {
+    this.userlist = this.userService.getAllUsers();
   }
 
   render() {
@@ -19,7 +24,7 @@ class Home extends Component {
         )}
 
         <ul>
-          {userlist.users.map(item => (
+          {this.userlist.map(item => (
             <li key={item.id} label={item.name} value={item.name}>
               {item.name}
             </li>

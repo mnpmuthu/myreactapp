@@ -1,41 +1,84 @@
 import React, { Component } from "react";
-import { MDBSelect } from "mdbreact";
+import { MDBSelect, Button } from "mdbreact";
 
 class SelectPage extends Component {
   state = {
     options: [
       {
-        text: "Option 1",
-        value: "1"
+        checked: false,
+
+        disabled: false,
+
+        icon: null,
+
+        value: "USA"
       },
+
       {
-        text: "Option 2",
-        value: "2"
+        checked: false,
+
+        disabled: false,
+
+        icon: null,
+
+        value: "Canada"
       },
+
       {
-        text: "Option 3",
-        value: "3"
+        checked: false,
+
+        disabled: false,
+
+        icon: null,
+
+        value: "UK"
       },
+
       {
-        text: "Option 4",
-        value: "4"
+        checked: false,
+
+        disabled: false,
+
+        icon: null,
+
+        value: "India"
       },
+
       {
-        text: "Option 5",
-        value: "5"
+        checked: false,
+
+        disabled: false,
+
+        icon: null,
+
+        value: "Japan"
       }
     ]
+  };
+
+  changeToIndia = () => {
+    this.setState(prevState => {
+      let prevOptions = [...prevState.options];
+
+      prevOptions[3].checked = true;
+
+      return { options: prevOptions };
+    });
   };
 
   render() {
     return (
       <div>
-        {/*<MDBSelect
+        <Button onClick={this.changeToIndia} size="sm">
+          Change dynamically
+        </Button>
+
+        <MDBSelect
+          multiple
+          color="primary"
           options={this.state.options}
           selected="Choose your option"
-          color="primary"
-          label="Example label"
-        />*/}
+        />
       </div>
     );
   }

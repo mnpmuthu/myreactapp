@@ -1,14 +1,7 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 
-import {
-  MDBContainer,
-  MDBRow,
-  MDBCol,
-  MDBInput,
-  MDBBtn,
-  MDBSelect
-} from "mdbreact";
+import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from "mdbreact";
 
 import UserService from "../Service/UserService";
 
@@ -16,7 +9,9 @@ class Register extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "",
+      id: null,
+      firstName: "",
+      lastName: null,
       email: "",
       confirmEmail: "",
       password: ""
@@ -28,7 +23,9 @@ class Register extends Component {
 
   resetForm = () => {
     this.setState({
-      name: "",
+      id: null,
+      firstName: "",
+      lastName: null,
       email: "",
       confirmEmail: "",
       password: ""
@@ -51,7 +48,7 @@ class Register extends Component {
       this.userService.onAddUser(this.state);
       this.resetForm();
       this.props.history.push(
-        "/signup/User '" + this.state.name + "' is registerd."
+        "/signup/User '" + this.state.firstName + "' is registerd."
       );
     }
   }
@@ -76,8 +73,8 @@ class Register extends Component {
                 <p className="h5 text-center mb-4">Sign up</p>
                 <div className="grey-text">
                   <MDBInput
-                    name="name"
-                    value={this.state.name}
+                    name="firstName"
+                    value={this.state.firstName}
                     onChange={this.changeValue}
                     required
                     label="Your name"

@@ -16,8 +16,8 @@ class Home extends Component {
           width: 150
         },
         {
-          label: "Name",
-          field: "name",
+          label: "First Name",
+          field: "firstName",
           sort: "asc",
           width: 270
         },
@@ -38,21 +38,17 @@ class Home extends Component {
           field: "password",
           sort: "asc",
           width: 150
-        },
-        {
-          label: "Subject",
-          field: "subject",
-          sort: "asc",
-          width: 100
-        },
-        {
-          label: "Message",
-          field: "message",
-          sort: "asc",
-          width: 100
         }
       ],
-      rows: [...this.userlist]
+      rows: [
+        {
+          id: 1,
+          firstName: "Muthu",
+          lastName: "MNP",
+          email: "pathrakalimuthu.n@cognizant.com",
+          password: "password@1"
+        }
+      ]
     }
   };
 
@@ -64,9 +60,11 @@ class Home extends Component {
   componentWillMount() {
     this.userlist = this.userService.getAllUsers();
     this.grid.data.rows = this.userlist;
+    console.log(this.userlist);
   }
   componentDidMount() {
     console.log(this.grid.data);
+    this.grid.data.rows = this.userlist;
   }
 
   render() {
@@ -80,8 +78,8 @@ class Home extends Component {
 
         <ul>
           {this.userlist.map(item => (
-            <li key={item.id} label={item.name} value={item.name}>
-              {item.name}
+            <li key={item.id} label={item.firstName} value={item.firstName}>
+              {item.firstName}
             </li>
           ))}
         </ul>

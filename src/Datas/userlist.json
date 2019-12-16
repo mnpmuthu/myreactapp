@@ -2,39 +2,38 @@
   "users": [
     {
       "id": 1,
-      "name": "CTS",
-      "lastName": "BILL",
-      "email": "bill@cts.com",
-      "password": "cognizant",
-      "subject": "hi",
-      "message": "hi"
+      "firstName": "Muthu",
+      "lastName": "MNP",
+      "email": "pathrakalimuthu.n@cognizant.com",
+      "password": "password@1"
     },
     {
       "id": 2,
-      "name": "Mark",
-      "lastName": "Zuckerberg",
-      "email": "mark@facebook.com",
-      "password": "cognizant1",
-      "subject": "hi",
-      "message": "hi"
+      "firstName": "Vinoth",
+      "lastName": "S",
+      "email": "vinoth@cognizant.com",
+      "password": "password@2"
     },
     {
       "id": 3,
-      "name": "Jeff",
-      "lastName": "Bezos",
-      "email": "jeff@amazon.com",
-      "password": "cognizant123",
-      "subject": "hi",
-      "message": "hi"
+      "firstName": "Ragu",
+      "lastName": "S",
+      "email": "ragu@cognizant.com",
+      "password": "password@3"
     },
     {
       "id": 4,
-      "name": "AAAAAA",
-      "lastName": "Bezos",
-      "email": "aaaa@amazon.com",
-      "password": "cognizant123",
-      "subject": "hi",
-      "message": "hi"
+      "firstName": "Mava",
+      "lastName": "M",
+      "email": "mava@cognizant.com",
+      "password": "password@4"
+    },
+    {
+      "id": 5,
+      "firstName": "Dhina",
+      "lastName": "L",
+      "email": "dhina@cognizant.com",
+      "password": "password@5"
     }
   ]
 }

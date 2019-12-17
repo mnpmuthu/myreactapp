@@ -63,8 +63,22 @@ class Home extends Component {
     console.log(this.userlist);
   }
   componentDidMount() {
-    console.log(this.grid.data);
-    this.grid.data.rows = this.userlist;
+    console.log("componentDidMount", this.grid.data);
+  }
+  componentWillReceiveProps(newProps) {
+    console.log("Component WILL RECIEVE PROPS!");
+  }
+  shouldComponentUpdate(newProps, newState) {
+    return true;
+  }
+  componentWillUpdate(nextProps, nextState) {
+    console.log("Component WILL UPDATE!");
+  }
+  componentDidUpdate(prevProps, prevState) {
+    console.log("Component DID UPDATE!");
+  }
+  componentWillUnmount() {
+    console.log("Component WILL UNMOUNT!");
   }
 
   render() {
